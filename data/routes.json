@@ -1,0 +1,242 @@
+{
+  "routes": [
+    {
+      "origin": "Yaba",
+      "destination": "CMS",
+      "transport_type": "brt",
+      "fare_naira": 350,
+      "notes": "Board at Yaba BRT stop, alight at CMS under the bridge"
+    },
+    {
+      "origin": "Yaba",
+      "destination": "CMS",
+      "transport_type": "danfo",
+      "fare_naira": 300,
+      "notes": "Yellow bus from Yaba bus stop, drop at CMS bus stop near the underpass"
+    },
+    {
+      "origin": "CMS",
+      "destination": "Ikeja",
+      "transport_type": "brt",
+      "fare_naira": 350,
+      "notes": "Direct BRT along the corridor, no need to change"
+    },
+    {
+      "origin": "Ikeja",
+      "destination": "Ojota",
+      "transport_type": "brt",
+      "fare_naira": 300,
+      "notes": "Use the BRT corridor, alight at Ojota station"
+    },
+    {
+      "origin": "Ikeja",
+      "destination": "Ketu",
+      "transport_type": "danfo",
+      "fare_naira": 500,
+      "notes": "Take a bus from Ikeja along the expressway, agree the fare before boarding"
+    },
+    {
+      "origin": "Ojota",
+      "destination": "Lekki",
+      "transport_type": "danfo",
+      "fare_naira": 500,
+      "notes": "Bus from Ojota roundabout through Lekki Phase 1"
+    },
+    {
+      "origin": "Ketu",
+      "destination": "Maryland",
+      "transport_type": "danfo",
+      "fare_naira": 400,
+      "notes": "Short hop along the Ketu Maryland road"
+    },
+    {
+      "origin": "Maryland",
+      "destination": "Anthony",
+      "transport_type": "keke",
+      "fare_naira": 300,
+      "notes": "Keke napep from Maryland bus stop down to Anthony junction"
+    },
+    {
+      "origin": "Anthony",
+      "destination": "Ikeja",
+      "transport_type": "danfo",
+      "fare_naira": 400,
+      "notes": "Bus from Anthony junction through Anthony Village to Ikeja"
+    },
+    {
+      "origin": "Oshodi",
+      "destination": "Ikeja",
+      "transport_type": "brt",
+      "fare_naira": 350,
+      "notes": "BRT from Oshodi terminal, one of the busiest stations, leave early"
+    },
+    {
+      "origin": "Oshodi",
+      "destination": "CMS",
+      "transport_type": "brt",
+      "fare_naira": 350,
+      "notes": "Direct BRT along the main corridor"
+    },
+    {
+      "origin": "Mile 2",
+      "destination": "Oshodi",
+      "transport_type": "brt",
+      "fare_naira": 300,
+      "notes": "BRT along the Mile 2 corridor, watch for traffic near the toll gate"
+    },
+    {
+      "origin": "Mile 2",
+      "destination": "Lekki",
+      "fare_naira": 400,
+      "transport_type": "danfo",
+      "notes": "Bus from Mile 2 through the Lekki inlet crossing"
+    },
+    {
+      "origin": "Surulere",
+      "destination": "CMS",
+      "transport_type": "danfo",
+      "fare_naira": 300,
+      "notes": "Bus from Surulere market to CMS, very common route and usually available"
+    },
+    {
+      "origin": "Surulere",
+      "destination": "Yaba",
+      "transport_type": "danfo",
+      "fare_naira": 300,
+      "notes": "Short ride along the main road to Yaba"
+    },
+    {
+      "origin": "VI",
+      "destination": "Obalende",
+      "transport_type": "danfo",
+      "fare_naira": 400,
+      "notes": "Bus from Victoria Island terminal to Obalende"
+    },
+    {
+      "origin": "VI",
+      "destination": "Lekki",
+      "transport_type": "danfo",
+      "fare_naira": 500,
+      "notes": "Cross the Lekki bridge, fares are usually higher on the island routes"
+    },
+    {
+      "origin": "Lekki",
+      "destination": "Ajah",
+      "transport_type": "danfo",
+      "fare_naira": 700,
+      "notes": "Long ride from Lekki to Ajah, keke is often cheaper for two people sharing"
+    },
+    {
+      "origin": "Ajah",
+      "destination": "Lekki",
+      "transport_type": "danfo",
+      "fare_naira": 700,
+      "notes": "Return leg, buses leave Ajah round about regularly"
+    },
+    {
+      "origin": "Ajah",
+      "destination": "Ikeja",
+      "transport_type": "danfo",
+      "fare_naira": 1000,
+      "notes": "Long distance, expect traffic. Danfo buses along the expressway"
+    },
+    {
+      "origin": "Berger",
+      "destination": "Ikeja",
+      "transport_type": "danfo",
+      "fare_naira": 700,
+      "notes": "Berger is known for the traffic, the fare stays the same but the trip takes longer"
+    },
+    {
+      "origin": "Iyana Ipaja",
+      "destination": "Egbeda",
+      "transport_type": "danfo",
+      "fare_naira": 400,
+      "notes": "Bus from Iyana Ipaja to Egbeda, junction is a short walk from the stop"
+    },
+    {
+      "origin": "Egbeda",
+      "destination": "Oshodi",
+      "transport_type": "danfo",
+      "fare_naira": 600,
+      "notes": "Longer trip, most buses run through to Oshodi or Ketu"
+    },
+    {
+      "origin": "Egbeda",
+      "destination": "Ikeja",
+      "transport_type": "danfo",
+      "fare_naira": 500,
+      "notes": "Common route with plenty of buses at all hours"
+    },
+    {
+      "origin": "Agege",
+      "destination": "Ikeja",
+      "transport_type": "brt",
+      "fare_naira": 350,
+      "notes": "BRT to Ikeja where you can change for other lines"
+    },
+    {
+      "origin": "Ojuelegba",
+      "destination": "Ikeja",
+      "transport_type": "brt",
+      "fare_naira": 300,
+      "notes": "Use the BRT lane, it saves a lot of time at the busy junctions"
+    },
+    {
+      "origin": "Ojuelegba",
+      "destination": "Costain",
+      "transport_type": "danfo",
+      "fare_naira": 400,
+      "notes": "Bus from Ojuelegba to Costain along the road"
+    },
+    {
+      "origin": "Costain",
+      "destination": "Yaba",
+      "transport_type": "danfo",
+      "fare_naira": 300,
+      "notes": "Short ride along the main road"
+    },
+    {
+      "origin": "Marina",
+      "destination": "CMS",
+      "transport_type": "danfo",
+      "fare_naira": 300,
+      "notes": "Bus from Marina down to CMS, also a common bus and keke napep route"
+    },
+    {
+      "origin": "Gbagada",
+      "destination": "Yaba",
+      "transport_type": "danfo",
+      "fare_naira": 400,
+      "notes": "Bus from Gbagada to Yaba, keke is faster when traffic builds up"
+    },
+    {
+      "origin": "Gbagada",
+      "destination": "Ojuelegba",
+      "transport_type": "danfo",
+      "fare_naira": 400,
+      "notes": "Regular bus service between the two areas"
+    },
+    {
+      "origin": "VI",
+      "destination": "Marina",
+      "transport_type": "danfo",
+      "fare_naira": 500,
+      "notes": "Island to mainland, buses cross the Third Mainland Bridge and the fare reflects the distance"
+    },
+    {
+      "origin": "Ikeja",
+      "destination": "Maryland",
+      "transport_type": "keke",
+      "fare_naira": 400,
+      "notes": "Keke napep through Ikeja to Maryland, cheaper and quicker for a short trip"
+    },
+    {
+      "origin": "Obalende",
+      "destination": "VI",
+      "transport_type": "keke",
+      "fare_naira": 300,
+      "notes": "Keke napep around the island roads, very common short distance hop"
+    }
+  ]
+}
