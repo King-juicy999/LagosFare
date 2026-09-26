@@ -117,4 +117,4 @@ Every fare here is an estimate for planning purposes. The real price depends on
 traffic, fuel prices and the time of day, and drivers set the final amount at
 the stop. Treat the output as guidance, not a quote.
 
-## Built by Willy
+## Built by William
