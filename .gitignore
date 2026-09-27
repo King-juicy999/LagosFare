@@ -38,3 +38,11 @@ Desktop.ini
 .env
 .env.*
 !.env.example
+
+# Internal planning and instruction files (for Claude Code, not the public project)
+CLAUDE.md
+AGENTS.md
+docs/
+.claude/
+.memory/
+.remember/
