@@ -46,3 +46,6 @@ docs/
 .claude/
 .memory/
 .remember/
+
+# Browser automation scratch output
+.playwright-mcp/

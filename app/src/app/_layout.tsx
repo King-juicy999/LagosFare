@@ -49,6 +49,13 @@ export default function RootLayout() {
           >
             <Stack.Screen name="(tabs)" />
             <Stack.Screen name="index" />
+            <Stack.Screen
+              name="welcome"
+              options={{
+                animation: "fade",
+                gestureEnabled: false,
+              }}
+            />
           </Stack>
         </MapFocusContext.Provider>
       </SafeAreaProvider>
