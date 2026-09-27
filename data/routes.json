@@ -238,5 +238,161 @@
       "fare_naira": 300,
       "notes": "Keke napep around the island roads, very common short distance hop"
     }
+  ],
+  "areas": [
+    {
+      "name": "Yaba",
+      "coordinates": [
+        6.5095,
+        3.3711
+      ]
+    },
+    {
+      "name": "CMS",
+      "coordinates": [
+        6.4531,
+        3.3958
+      ]
+    },
+    {
+      "name": "Marina",
+      "coordinates": [
+        6.4515,
+        3.3931
+      ]
+    },
+    {
+      "name": "Ikeja",
+      "coordinates": [
+        6.6018,
+        3.3515
+      ]
+    },
+    {
+      "name": "Ojota",
+      "coordinates": [
+        6.5762,
+        3.3796
+      ]
+    },
+    {
+      "name": "Ketu",
+      "coordinates": [
+        6.5928,
+        3.3856
+      ]
+    },
+    {
+      "name": "Lekki",
+      "coordinates": [
+        6.4478,
+        3.4732
+      ]
+    },
+    {
+      "name": "Maryland",
+      "coordinates": [
+        6.5658,
+        3.3667
+      ]
+    },
+    {
+      "name": "Anthony",
+      "coordinates": [
+        6.5825,
+        3.3667
+      ]
+    },
+    {
+      "name": "Oshodi",
+      "coordinates": [
+        6.5556,
+        3.3444
+      ]
+    },
+    {
+      "name": "Mile 2",
+      "coordinates": [
+        6.4577,
+        3.2944
+      ]
+    },
+    {
+      "name": "Surulere",
+      "coordinates": [
+        6.4924,
+        3.3568
+      ]
+    },
+    {
+      "name": "VI",
+      "coordinates": [
+        6.4281,
+        3.4219
+      ]
+    },
+    {
+      "name": "Ajah",
+      "coordinates": [
+        6.4698,
+        3.5852
+      ]
+    },
+    {
+      "name": "Berger",
+      "coordinates": [
+        6.6389,
+        3.3639
+      ]
+    },
+    {
+      "name": "Iyana Ipaja",
+      "coordinates": [
+        6.6164,
+        3.2983
+      ]
+    },
+    {
+      "name": "Egbeda",
+      "coordinates": [
+        6.5833,
+        3.2833
+      ]
+    },
+    {
+      "name": "Agege",
+      "coordinates": [
+        6.6155,
+        3.3242
+      ]
+    },
+    {
+      "name": "Ojuelegba",
+      "coordinates": [
+        6.5088,
+        3.3639
+      ]
+    },
+    {
+      "name": "Costain",
+      "coordinates": [
+        6.4747,
+        3.3742
+      ]
+    },
+    {
+      "name": "Gbagada",
+      "coordinates": [
+        6.5497,
+        3.3861
+      ]
+    },
+    {
+      "name": "Obalende",
+      "coordinates": [
+        6.4497,
+        3.4064
+      ]
+    }
   ]
 }
