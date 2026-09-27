@@ -1,0 +1,6 @@
+
+.expo/
+dist/
+web-build/
+*.log
+devices.json
