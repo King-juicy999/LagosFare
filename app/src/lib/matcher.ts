@@ -3,6 +3,7 @@ export interface Route {
   destination: string;
   transportType: string;
   fareNaira: number;
+  name: string;
   notes: string;
 }
 
@@ -35,25 +36,34 @@ export function fareDisplay(fareNaira: number): string {
 }
 
 export function parseRoutes(payload: unknown): Route[] {
-  const entries = (payload as { routes?: unknown })?.routes;
-  if (!Array.isArray(entries)) return [];
+  const corridors = (payload as { routes?: unknown })?.routes;
+  if (!Array.isArray(corridors)) return [];
 
   const routes: Route[] = [];
-  for (const raw of entries) {
-    const entry = raw as Record<string, unknown>;
-    const fare = Number(entry.fare_naira);
-    if (typeof entry.origin !== "string") continue;
-    if (typeof entry.destination !== "string") continue;
-    if (typeof entry.transport_type !== "string") continue;
-    if (!Number.isFinite(fare)) continue;
+  for (const raw of corridors) {
+    const corridor = raw as Record<string, unknown>;
+    if (typeof corridor.origin !== "string") continue;
+    if (typeof corridor.destination !== "string") continue;
+    if (!Array.isArray(corridor.options)) continue;
 
-    routes.push({
-      origin: entry.origin.trim(),
-      destination: entry.destination.trim(),
-      transportType: entry.transport_type.trim().toLowerCase(),
-      fareNaira: fare,
-      notes: typeof entry.notes === "string" ? entry.notes.trim() : "",
-    });
+    const origin = corridor.origin.trim();
+    const destination = corridor.destination.trim();
+
+    for (const rawOption of corridor.options) {
+      const option = rawOption as Record<string, unknown>;
+      if (typeof option.transport_type !== "string") continue;
+      const fare = Number(option.fare_naira);
+      if (!Number.isFinite(fare)) continue;
+
+      routes.push({
+        origin,
+        destination,
+        transportType: option.transport_type.trim().toLowerCase(),
+        fareNaira: fare,
+        name: typeof option.name === "string" ? option.name.trim() : "",
+        notes: typeof option.notes === "string" ? option.notes.trim() : "",
+      });
+    }
   }
 
   return routes;
@@ -173,7 +183,7 @@ function findDirect(allRoutes: Route[], origin: string, destination: string): Ro
   for (const route of allRoutes) {
     if (pairKey(route.origin, route.destination) !== wanted) continue;
 
-    const key = `${route.transportType}|${route.fareNaira}`;
+    const key = `${route.transportType}|${route.name}|${route.fareNaira}`;
     if (seen.has(key)) continue;
     seen.add(key);
     found.push(route);

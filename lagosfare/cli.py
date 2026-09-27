@@ -95,11 +95,14 @@ def show_routes(origin: str, destination: str) -> int:
         print(f"\n{title}\n")
 
     rows = [
-        (route.transport_type.upper(), route.fare_display, route.notes or "-")
+        (route.label, route.fare_display, route.notes or "-")
         for route in matches
     ]
-    _render_table(rows, ("TRANSPORT", "EST. FARE", "NOTES"))
-    print("\nFares are estimates and can vary with traffic, fuel prices and time of day.")
+    _render_table(rows, ("VEHICLE", "EST. FARE", "NOTES"))
+    print(
+        "\nFares are estimates, not set prices. Agree the amount with the "
+        "driver before boarding."
+    )
     return 0
 
 

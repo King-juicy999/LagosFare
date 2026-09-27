@@ -34,28 +34,51 @@ def normalize(text: str) -> str:
 
 
 def load_routes(data_file: Path = DATA_FILE) -> list[Route]:
-    """Read the route dataset and return it as Route objects.
+    """Read the route dataset and return one Route per vehicle option.
+
+    The dataset nests vehicle options under each corridor, so a corridor with
+    a danfo and a BRT expands into two routes here. That keeps the matching
+    code working in terms of a single option while the JSON stays structured
+    the way the data is actually shaped.
 
     Entries missing a required field are skipped rather than raising, so one
-    bad row in the JSON cannot take the whole CLI down.
+    bad row in the JSON cannot take the whole CLI down. A corridor whose
+    options are all unusable is skipped as a whole, so an option can never
+    end up travelling without the corridor it belongs to.
     """
     with open(data_file, encoding="utf-8") as handle:
         payload = json.load(handle)
 
     routes = []
-    for entry in payload.get("routes", []):
+    for corridor in payload.get("routes", []):
         try:
-            routes.append(
-                Route(
-                    origin=entry["origin"].strip(),
-                    destination=entry["destination"].strip(),
-                    transport_type=entry["transport_type"].strip().lower(),
-                    fare_naira=int(entry["fare_naira"]),
-                    notes=entry.get("notes", "").strip(),
-                )
-            )
-        except (KeyError, TypeError, ValueError):
+            origin = corridor["origin"].strip()
+            destination = corridor["destination"].strip()
+            options = corridor["options"]
+        except (KeyError, TypeError, AttributeError):
             continue
+
+        if not isinstance(options, list):
+            continue
+
+        built = []
+        for option in options:
+            try:
+                built.append(
+                    Route(
+                        origin=origin,
+                        destination=destination,
+                        transport_type=option["transport_type"].strip().lower(),
+                        fare_naira=int(option["fare_naira"]),
+                        name=str(option.get("name", "")).strip(),
+                        notes=str(option.get("notes", "")).strip(),
+                    )
+                )
+            except (KeyError, TypeError, ValueError, AttributeError):
+                continue
+
+        if built:
+            routes.extend(built)
 
     return routes
 
@@ -139,7 +162,12 @@ def _collect(routes: list[Route], origin: str, destination: str) -> list[Route]:
 
 
 def _deduplicate(routes: list[Route]) -> list[Route]:
-    """Drop repeats created by matching a route in both directions."""
+    """Drop repeats created by matching a route in both directions.
+
+    The name is part of the key because two options on the same corridor can
+    share a transport type and a fare while being different vehicles, and
+    those are not duplicates.
+    """
     seen = set()
     unique = []
     for route in routes:
@@ -147,6 +175,7 @@ def _deduplicate(routes: list[Route]) -> list[Route]:
             normalize(route.origin),
             normalize(route.destination),
             route.transport_type,
+            route.name,
             route.fare_naira,
         )
         if key in seen:

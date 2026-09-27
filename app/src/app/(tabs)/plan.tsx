@@ -167,7 +167,9 @@ export default function PlanScreen() {
             </View>
           ))}
           <Text style={styles.disclaimer}>
-            Fares are estimates and can vary with traffic, fuel prices and time of day.
+            Every fare here is an estimate, not a set price. Agree the amount
+            with the driver before you board, and expect it to move with
+            traffic, fuel prices and the time of day.
           </Text>
         </View>
       ) : null}

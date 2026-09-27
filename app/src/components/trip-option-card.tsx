@@ -15,7 +15,9 @@ export function TripOptionCard({
   onOpenDirections,
 }: TripOptionCardProps) {
   const isDirect = option.legs.length === 1;
-  const transport = transportStyle(option.legs[0].route.transportType);
+  const lead = option.legs[0].route;
+  const transport = transportStyle(lead.transportType);
+  const vehicle = lead.name || transport.label;
 
   return (
     <View style={styles.card}>
@@ -52,7 +54,8 @@ export function TripOptionCard({
                   <Text style={styles.legName}>{leg.to}</Text>
                 </View>
                 <Text style={styles.legDetail}>
-                  {legTransport.label} · {fareDisplay(leg.route.fareNaira)}
+                  {leg.route.name || legTransport.label} ·{" "}
+                  {fareDisplay(leg.route.fareNaira)}
                 </Text>
                 {leg.route.notes ? (
                   <Text style={styles.notes}>{leg.route.notes}</Text>
@@ -67,8 +70,11 @@ export function TripOptionCard({
         </View>
       )}
 
-      {isDirect && option.legs[0].route.notes ? (
-        <Text style={styles.notes}>{option.legs[0].route.notes}</Text>
+      {isDirect ? (
+        <View style={styles.vehicleRow}>
+          <Text style={styles.vehicle}>{vehicle}</Text>
+          {lead.notes ? <Text style={styles.notes}>{lead.notes}</Text> : null}
+        </View>
       ) : null}
 
       <View style={styles.buttons}>
@@ -174,6 +180,14 @@ const styles = StyleSheet.create({
     marginTop: 3,
     fontSize: 13,
     color: COLORS.inkSoft,
+  },
+  vehicleRow: {
+    marginTop: 12,
+  },
+  vehicle: {
+    fontSize: 15,
+    fontWeight: "600",
+    color: COLORS.ink,
   },
   notes: {
     marginTop: 6,
