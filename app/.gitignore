@@ -4,3 +4,5 @@ dist/
 web-build/
 *.log
 devices.json
+
+node_modules/
