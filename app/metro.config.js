@@ -6,6 +6,8 @@ const dataRoot = path.resolve(projectRoot, "..", "data");
 
 const config = getDefaultConfig(projectRoot);
 
+config.resolver.platforms = ["android"];
+
 config.watchFolders = [...(config.watchFolders ?? []), dataRoot];
 
 config.resolver.nodeModulesPaths = [
