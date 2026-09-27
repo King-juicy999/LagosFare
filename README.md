@@ -29,8 +29,8 @@ The dataset currently covers:
 | | |
 | --- | --- |
 | Areas | 22 |
-| Corridors | 34 |
-| Vehicle options | 36 |
+| Corridors | 33 |
+| Vehicle options | 35 |
 
 ## The command line tool
 
@@ -248,11 +248,12 @@ app/src/
 - **The Map tab does not work on web.** `react-native-maps` has no web
   implementation, and because Expo Router bundles every route, the whole web
   build fails before anything renders. Test on a real device or a simulator.
-- **Corridors that run in both directions return both halves.** Searching
-  `Lekki` to `Ajah` also returns the `Ajah` to `Lekki` entry, because the
-  matcher treats a corridor as undirected so that a backwards search still
-  finds an answer. The two directions are genuinely separate entries in the
-  data, so a corridor listed twice shows up twice.
+- **A corridor is stored once and serves both directions.** The matcher treats
+  a corridor as undirected, so `Lekki` to `Ajah` and `Ajah` to `Lekki` return
+  the same options. A corridor listed twice in the data comes back as one
+  merged list of options, which is what you want when the vehicles running
+  either way are the same ones. Keep to one entry per corridor unless the two
+  directions genuinely carry different vehicles.
 
 ## A note on fares
 

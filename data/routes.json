@@ -212,31 +212,19 @@
           "name": "Danfo",
           "transport_type": "danfo",
           "fare_naira": 700,
-          "notes": "Long ride from Lekki to Ajah, keke is often cheaper for two people sharing"
+          "notes": "Long ride either way, keke is often cheaper for two people sharing"
         },
         {
           "name": "Korope",
           "transport_type": "danfo",
           "fare_naira": 550,
-          "notes": "Small minibus, usually the quickest to fill up on the Lekki Expressway"
+          "notes": "Small minibus, usually the quickest to fill up on the Lekki Expressway, the one to look for leaving Ajah round about"
         },
         {
           "name": "Commercial bus",
           "transport_type": "danfo",
           "fare_naira": 650,
           "notes": "Larger seated bus, cheaper per person than a danfo on this corridor"
-        }
-      ]
-    },
-    {
-      "origin": "Ajah",
-      "destination": "Lekki",
-      "options": [
-        {
-          "name": "Danfo",
-          "transport_type": "danfo",
-          "fare_naira": 700,
-          "notes": "Return leg, buses leave Ajah round about regularly"
         }
       ]
     },
